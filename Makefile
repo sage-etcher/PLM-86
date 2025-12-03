@@ -12,4 +12,6 @@ build/build.ninja: meson.build
 build/src/plmc build/src/hecye:
 	ninja -C build
 
+PHONY: build setup run
+
 # vim: noet
