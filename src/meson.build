@@ -1,7 +1,6 @@
 
 plmc_srcs = [
   'main.c',
-  'hec ye.c',
 ]
 
 plmc = executable(
@@ -9,5 +8,9 @@ plmc = executable(
   plmc_srcs,
 )
 
+hecye = executable(
+  'hecye',
+  'hec ye.c',
+)
 
 # end of file
