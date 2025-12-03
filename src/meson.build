@@ -1,6 +1,7 @@
 
 plmc_srcs = [
   'main.c',
+  'hec ye.c',
 ]
 
 plmc = executable(
