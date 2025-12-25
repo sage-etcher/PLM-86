@@ -5,10 +5,12 @@
 #include <stddef.h>
 
 typedef enum {
-    SYM_UNKNOWN,
+    SYM_NONE = 0,
+    SYM_UNKNOWN = 1,
     SYM_IDENT,
     SYM_NUMBER,
     SYM_COUNT,
+    
 } symbol_t;
 
 #define SYMS_MAX_N 5
@@ -25,6 +27,8 @@ extern const char *const SYM_TEXT[SYM_COUNT];
 
 int sym_add (symbols_t *self, symbol_t sym);
 int sym_remove (symbols_t *self, symbol_t sym);
+
+int sym_exists (symbols_t *self, symbols_t *syms);
 
 #endif
 /* end of file */

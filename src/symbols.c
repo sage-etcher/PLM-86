@@ -59,4 +59,25 @@ sym_remove (symbols_t *self, symbol_t sym)
     return 1;
 }
 
+int
+sym_exists (symbols_t *haystack, symbols_t *needle)
+{
+    size_t ii = 0;
+    size_t jj = 0;
+
+    for (ii = 0; ii < haystack->n; ii++)
+    {
+        for (jj = 0; jj < needle->n; jj++)
+        {
+            if (haystack->syms[ii] == needle->syms[jj])
+            {
+                return needle->syms[jj];
+            }
+        }
+    }
+
+    return 0;
+}
+
+
 /* end of file */
