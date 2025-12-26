@@ -37,7 +37,7 @@ typedef enum {
     SYM_NEQ,            /* <> */
     SYM_LTE,            /* <= */
     SYM_GTE,            /* >= */
-    SYM_EQU,            /* := */
+    SYM_ASSIGNMENT,     /* := */
     SYM_COMMENT,        /* same as c89 multiline style */
 
     SYM_IDENT,
@@ -80,7 +80,76 @@ typedef enum {
  */
 #define STRING_MAX 255  /* max string constant len are compiler determined */
 
+/* reserved keywords (case insensitive)
+ *   DECLARE
+ *   BYTE
+ *   ADDRESS
+ *   ? SHORT
+ *   ? WORD
+ *   ? DWORD
+ *   STRUCTURE
+ *   BASED
+ *   AT
+ *   PUBLIC
+ *   EXTERNAL
+ *   INITIAL
+ *   DATA
+ *
+ *   LITERALLY
+ *
+ *   MOD
+ *   NOT
+ *   AND
+ *   OR
+ *   XOR
+ *
+ *   DO
+ *   WHILE
+ *   CASE
+ *   END
+ *   TO
+ *   BY
+ *
+ *   IF
+ *   THEN
+ *   ELSE
+ * 
+ *   LABEL
+ *   PROCEDURE
+ *   RETURN
+ *   CALL
+ *   GOTO
+ *   GO TO
+ *   REENTRANT
+ *
+ *   INTERUPT   (likely unused in modern systems)
+ *   HALT
+ *   ENABLE
+ *   DISABLE
+ */
 
+/* personal note, got to page 74 */
+
+/* variables:
+ * types (PLM-86 maybe extend to SHORT, WORD, DWORD)
+ *   BYTE
+ *   ADDRESS
+ *
+ * variables declared in a parenthesis list are guaranteed to be consecutive
+ 
+ *     DECLARE (VAR_A, VAR_B, VAR_C) BYTE;
+ *     DECLARE VAR_D ADDRESS;
+ */
+
+/* operator precenance
+ *   unary '-'
+ *   * / MOD
+ *   + -
+ *   < <= <> = >= >
+ *   NOT
+ *   AND
+ *   OR XOR
+ */
 
 
 #define SYMS_MAX_N 5
