@@ -45,11 +45,54 @@ typedef enum {
 
     SYM_BLANK,          /* space, tab, carriage-return, line-feed */
 
-    SYM_COMMENT,        /* same as c89 multiline style */
+    /* maybe comments should get ignored at scanner stage rather than getting
+     * pushed throught lexer and stuff? */
+    /* SYM_COMMENT, */       /* same as c89 multiline style */
 
     SYM_IDENT,
     SYM_NUMBER,
     SYM_STRING,         /* '...' (single quotes only) */
+
+    SYM_DECLARE,
+    SYM_BYTE,
+    SYM_ADDRESS,
+    /* SYM_SHORT,
+     * SYM_WORD,
+     * SYM_DWORD, */
+    SYM_STRUCTURE,
+    SYM_BASED,
+    SYM_AT,
+    SYM_PUBLIC,
+    SYM_EXTERNAL,
+    SYM_INITIAL,
+    SYM_DATA,
+    SYM_LITERALLY,
+    SYM_KW_PLUS,
+    SYM_KW_MINUS,
+    SYM_NOT,
+    SYM_AND,
+    SYM_OR,
+    SYM_XOR,
+    SYM_DO,
+    SYM_WHILE,
+    SYM_CASE,
+    SYM_END,
+    SYM_TO,
+    SYM_BY,
+    SYM_IF,
+    SYM_THEN,
+    SYM_ELSE,
+    SYM_LABEL,
+    SYM_PROCEDURE,
+    SYM_RETURN,
+    SYM_CALL,
+    SYM_GOTO,
+    SYM_REENTRANT,
+    SYM_INTERRUPT,
+    SYM_HALT,
+    SYM_ENABLE,
+    SYM_DISABLE,
+    SYM_KW_EOF,
 
     SYM_COUNT,
     
@@ -200,8 +243,10 @@ typedef struct {
     size_t n;
 } symbols_t;
 
-#define NEW_SYMS1(x)   ((symbols_t){ .n = 1, .syms = { (x)      } })
-#define NEW_SYMS2(x,y) ((symbols_t){ .n = 2, .syms = { (x), (y) } })
+#define SYMS_N(cnt, ...)   ((symbols_t){ .n = (cnt), .syms = { __VA_ARGS__ } })
+
+#define SYMS_1(x)   SYMS_N (1, x)
+#define SYMS_2(x,y) SYMS_N (2, x, y)
 
 extern const char *const SYM_TEXT[SYM_COUNT];
 

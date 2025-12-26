@@ -6,9 +6,80 @@
 #include <string.h>
 
 const char *const SYM_TEXT[SYM_COUNT] = {
-    [SYM_UNKNOWN] = "unknown symbol",
-    [SYM_IDENT]   = "identifier",
-    [SYM_NUMBER]  = "number",
+    [SYM_NONE]             = "none",
+    [SYM_UNKNOWN]          = "unknown",
+
+    [SYM_DOLLAR_SIGN]      = "dollar sign",
+    [SYM_EQUAL]            = "equal",
+   
+    [SYM_ASSIGN]           = "assignment",
+    [SYM_DOT]              = "dot",
+
+    [SYM_SLASH]            = "slash",
+    [SYM_PAREN_OPEN]       = "paren open",
+    [SYM_PAREN_CLOSE]      = "paren close",
+    [SYM_PLUS]             = "plus",
+    [SYM_MINUS]            = "minus",
+    [SYM_APOSTROPHE]       = "apostrophe",
+    [SYM_ASTRISK]          = "astrisk",
+
+    [SYM_LESS_THAN]        = "less_than",
+    [SYM_GREATER_THAN]     = "greater than",
+    [SYM_LESS_OR_EQUAL]    = "less or equal",
+    [SYM_GREATER_OR_EQUAL] = "greater or equal",
+    [SYM_NOT_EQUAL]        = "not equal",
+
+    [SYM_COLON]            = "colon",
+    [SYM_SEMICOLON]        = "semicolon",
+    [SYM_COMMA]            = "comma",
+
+    [SYM_BLANK]            = "blank",
+
+    [SYM_DECLARE]          = "declare",
+    [SYM_BYTE]             = "byte",
+    [SYM_ADDRESS]          = "address",
+    /* [SYM_SHORT]            = "short",
+     * [SYM_WORD]             = "word",
+     * [SYM_DWORD]            = "dword", */
+    [SYM_STRUCTURE]        = "structure",
+    [SYM_BASED]            = "based",
+    [SYM_AT]               = "at",
+    [SYM_PUBLIC]           = "public",
+    [SYM_EXTERNAL]         = "external",
+    [SYM_INITIAL]          = "initial",
+    [SYM_DATA]             = "data",
+    [SYM_LITERALLY]        = "literally",
+    [SYM_KW_PLUS]          = "kw plus",
+    [SYM_KW_MINUS]         = "kw minus",
+    [SYM_NOT]              = "not",
+    [SYM_AND]              = "and",
+    [SYM_OR]               = "or",
+    [SYM_XOR]              = "xor",
+    [SYM_DO]               = "do",
+    [SYM_WHILE]            = "while",
+    [SYM_CASE]             = "case",
+    [SYM_END]              = "end",
+    [SYM_TO]               = "to",
+    [SYM_BY]               = "by",
+    [SYM_IF]               = "if",
+    [SYM_THEN]             = "then",
+    [SYM_ELSE]             = "else",
+    [SYM_LABEL]            = "label",
+    [SYM_PROCEDURE]        = "procedure",
+    [SYM_RETURN]           = "return",
+    [SYM_CALL]             = "call",
+    [SYM_GOTO]             = "goto",
+    [SYM_REENTRANT]        = "reentrant",
+    [SYM_INTERRUPT]        = "interrupt",
+    [SYM_HALT]             = "halt",
+    [SYM_ENABLE]           = "enable",
+    [SYM_DISABLE]          = "disable",
+    [SYM_KW_EOF]           = "kw eof",
+
+
+    [SYM_IDENT]            = "identifier",
+    [SYM_NUMBER]           = "number",
+    [SYM_STRING]           = "string",
 };
 
 

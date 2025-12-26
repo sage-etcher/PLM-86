@@ -1,6 +1,8 @@
 
 plmc_srcs = [
   'main.c',
+  'symbols.c',
+  'lexer.c',
 ]
 
 plmc = executable(
