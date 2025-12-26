@@ -28,21 +28,24 @@ typedef enum {
     SYM_MINUS,          /* - */
     SYM_APOSTROPHE,     /* ' */
     SYM_MULT,           /* * */
-    SYM_BRACKET_OPEN,   /* < */
-    SYM_BRACKET_CLOSE,  /* > */
     SYM_COLON,          /* : */
     SYM_SEMICOLON,      /* ; */
     SYM_BLANK,          /* space, tab, carriage-return, line-feed */
 
+    SYM_BRACKET_OPEN,   /* < */
+    SYM_BRACKET_CLOSE,  /* > */
     SYM_NEQ,            /* <> */
     SYM_LTE,            /* <= */
     SYM_GTE,            /* >= */
+
     SYM_ASSIGNMENT,     /* := */
+
     SYM_COMMENT,        /* same as c89 multiline style */
 
     SYM_IDENT,
     SYM_NUMBER,
     SYM_STRING,         /* '...' (single quotes only) */
+
     SYM_COUNT,
     
 } symbol_t;
@@ -151,6 +154,39 @@ typedef enum {
  *   OR XOR
  */
 
+/* built-in procedures
+ *   INPUT
+ *   LENGTH
+ *   LAST
+ *   SIZE
+ *   LOW
+ *   HIGH
+ *   DOUBLE
+ *   ROL
+ *   ROR
+ *   SHL
+ *   SHR
+ *   MOVE
+ *   TIME
+ *
+ * special operators
+ *   PLUS
+ *   MINUS
+ *
+ * built-in hardware flag procedures
+ *   SCL
+ *   SCR
+ *   DEC
+ *   CARRY
+ *   ZERO
+ *   SIGN
+ *   PARITY
+ *
+ * built-in variables
+ *   OUTPUT
+ *   MEMORY
+ *   STACKPTR
+ */
 
 #define SYMS_MAX_N 5
 
