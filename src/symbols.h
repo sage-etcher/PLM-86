@@ -19,26 +19,31 @@ typedef enum {
     SYM_NONE = 0,
     SYM_UNKNOWN = 1,
 
+    SYM_DOLLAR_SIGN,    /* $ */
     SYM_EQUAL,          /* = */
+    
+    SYM_ASSIGN,         /* := */
     SYM_DOT,            /* . */
+
     SYM_SLASH,          /* / */
     SYM_PAREN_OPEN,     /* ( */
     SYM_PAREN_CLOSE,    /* ) */
     SYM_PLUS,           /* + */
     SYM_MINUS,          /* - */
     SYM_APOSTROPHE,     /* ' */
-    SYM_MULT,           /* * */
+    SYM_ASTRISK,        /* * */
+
+    SYM_LESS_THAN,          /* < */
+    SYM_GREATER_THAN,       /* > */
+    SYM_LESS_OR_EQUAL,      /* <= */
+    SYM_GREATER_OR_EQUAL,   /* >= */
+    SYM_NOT_EQUAL,          /* <> */
+
     SYM_COLON,          /* : */
     SYM_SEMICOLON,      /* ; */
+    SYM_COMMA,          /* , */
+
     SYM_BLANK,          /* space, tab, carriage-return, line-feed */
-
-    SYM_BRACKET_OPEN,   /* < */
-    SYM_BRACKET_CLOSE,  /* > */
-    SYM_NEQ,            /* <> */
-    SYM_LTE,            /* <= */
-    SYM_GTE,            /* >= */
-
-    SYM_ASSIGNMENT,     /* := */
 
     SYM_COMMENT,        /* same as c89 multiline style */
 
@@ -101,6 +106,8 @@ typedef enum {
  *   LITERALLY
  *
  *   MOD
+ *   PLUS
+ *   MINUS
  *   NOT
  *   AND
  *   OR
@@ -125,10 +132,12 @@ typedef enum {
  *   GO TO
  *   REENTRANT
  *
- *   INTERUPT   (likely unused in modern systems)
+ *   INTERRUPT   (likely unused in modern systems)
  *   HALT
  *   ENABLE
  *   DISABLE
+ *
+ *   EOF
  */
 
 /* personal note, got to page 74 */
@@ -147,7 +156,7 @@ typedef enum {
 /* operator precenance
  *   unary '-'
  *   * / MOD
- *   + -
+ *   + - PLUS MINUS
  *   < <= <> = >= >
  *   NOT
  *   AND
@@ -168,10 +177,6 @@ typedef enum {
  *   SHR
  *   MOVE
  *   TIME
- *
- * special operators
- *   PLUS
- *   MINUS
  *
  * built-in hardware flag procedures
  *   SCL
