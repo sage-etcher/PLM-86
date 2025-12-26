@@ -31,6 +31,19 @@ expect (lexer_t *self, symbols_t syms)
 
 
 static int
+parse_restricted_subscript (lexer_t *self)
+{
+    /* restrited subscript */
+    if (!accept (self, SYMS_1 (SYM_PAREN_OPEN))) return 0;
+
+    /* restricted reference */
+    while (accept (self, SYMS_1 (SYM_MINUS))) {}
+    expect (self, SYMS_1 (SYM_NUMBER));
+
+    return 1;
+}
+
+static int
 parse_restricted_expression (lexer_t *self)
 {
     /* restricted reference */
@@ -38,13 +51,6 @@ parse_restricted_expression (lexer_t *self)
     {
         expect (self, SYMS_1 (SYM_IDENT));
 
-        /* restrited subscript */
-        if (accept (self, SYMS_1 (SYM_PAREN_OPEN)))
-        {
-            /* restricted reference */
-            while (accept (self, SYMS_1 (SYM_MINUS))) {}
-            expect (self, SYMS_1 (SYM_NUMBER));
-        }
     }
     return 0;
 }
